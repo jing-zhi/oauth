@@ -6,10 +6,6 @@ type AppConf struct {
 	Rurl   string
 }
 
-// AuthGitee gitee
-type AuthGitee struct {
-	Conf *AppConf
-}
 type AuthGiteeErrRes struct {
 	Error            int    `json:"errorCode"`
 	ErrorDescription string `json:"errMsg"`
