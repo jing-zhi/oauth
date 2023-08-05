@@ -8,13 +8,13 @@ import (
 
 //GetRurl 获取登录地址
 func (e *AppConf) GetRurl(state string) string {
-	return "https://gitee.com/oauth/authorize?client_id=" + e.Conf.AppId + "&redirect_uri=" + e.Conf.Rurl + "&response_type=code"
+	return "https://gitee.com/oauth/authorize?client_id=" + e.AppId + "&redirect_uri=" + e.Rurl + "&response_type=code"
 }
 
 // GetToken 获取token
 func (e *AppConf) GetToken(code string) (*AuthGiteeSuccRes, error) {
 
-	str, err := HttpPost("https://gitee.com/oauth/token?grant_type=authorization_code&code=" + code + "&client_id=" + e.Conf.AppId + "&redirect_uri=" + e.Conf.Rurl + "&client_secret=" + e.Conf.AppKey)
+	str, err := HttpPost("https://gitee.com/oauth/token?grant_type=authorization_code&code=" + code + "&client_id=" + e.AppId + "&redirect_uri=" + e.Rurl + "&client_secret=" + e.AppKey)
 	if err != nil {
 		return nil, err
 	}
