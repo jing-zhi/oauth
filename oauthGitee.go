@@ -7,7 +7,7 @@ import (
 )
 
 //GetRurl 获取登录地址
-func (e *AppConf) GetRurl(state string) string {
+func (e *AppConf) GetUrl(state string) string {
 	return "https://gitee.com/oauth/authorize?client_id=" + e.AppId + "&redirect_uri=" + e.Rurl + "&response_type=code"
 }
 
